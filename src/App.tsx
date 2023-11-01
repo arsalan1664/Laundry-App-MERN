@@ -1,16 +1,17 @@
-import Banner from "./components/Banner"
-import Navbar from "./components/Navbar"
-import Service from "./components/Service"
+import Body from "./components/Body"
+import Header from "./components/Header"
+
 
 
 function App() {
 
 
     return (
-        <div className="bg-background text-foreground min-h-screen">
-            <Navbar/>
-            <Banner/>
-            <Service/>
+        <div className="bg-background text-foreground min-h-screen ">
+
+            <Header/>
+            <Body/>
+
 
         </div>
     )
