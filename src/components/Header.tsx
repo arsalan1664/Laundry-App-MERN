@@ -4,8 +4,8 @@ import { Button } from "./ui/button"
 function Header() {
   return (
     <div className="h-16 w-full bg-white border-b flex justify-between items-center">
-        <h2 className="ml-4 text-lg">Luandry App</h2>
-        <div>
+        <h2 className="ml-4 text-lg">Laundry App</h2>
+        <div className="hidden sm:block">
         <Button size={'sm'}  variant={'link'} className=" gap-2 mr-2 "> <Plus size={16} />New Order </Button>
         <Button size={'sm'}  variant={'link'} className=" gap-2 mr-2 "> <DollarSign size={16} />Checkout </Button>
         </div>
