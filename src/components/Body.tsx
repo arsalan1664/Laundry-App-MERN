@@ -1,8 +1,4 @@
 import {
-    Minus,
-    Plus
-} from "lucide-react"
-import {
     Accordion,
     AccordionItem,
     AccordionTrigger,
@@ -12,65 +8,202 @@ import {
     Button
 } from "./ui/button"
 import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle
-} from "./ui/card"
-import {
-    Avatar
-} from "./ui/avatar"
-import {
-    AvatarImage
-} from "@radix-ui/react-avatar"
-import {
-    ScrollArea
-} from "./ui/scroll-area"
+    Card} from "./ui/card"
+import Cart from "./Cart"
 
-const images = [
-    "/baby-gloves.png",
-    "/clothes.png",
-    "/socks.png",
-    "/dress.png",
-    "/hat.png",
-    "/hawaiian-shirt.png",
-    "/pants.png",
-    "/shawl.png"
-];
+
+
+const LaundryItems = [
+    {
+        "id": 1,
+        "item": "Laundry",
+        "title": "Gloves",
+        "image": "/baby-gloves.png",    
+    },
+    {
+        "id": 2,
+        "item": "Laundry",
+        "title": "Clothes",
+        "image": "/clothes.png",    
+    },
+    {
+        "id": 3,
+        "item": "Laundry",
+        "title": "Socks",
+        "image": "/socks.png",    
+    },
+    {
+        "id": 4,
+        "item": "Laundry",
+        "title": "Dress",
+        "image": "/dress.png",    
+    },
+    {
+        "id": 5,
+        "item": "Laundry",
+        "title": "Hat",
+        "image": "/hat.png",    
+    },
+    {
+        "id": 6,
+        "item": "Laundry",
+        "title": "Shirt",
+        "image": "/hawaiian-shirt.png",    
+    },
+    {
+        "id": 7,
+        "item": "Laundry",
+        "title": "Pants",
+        "image": "/pants.png",    
+    },
+    {
+        "id": 8,
+        "item": "Laundry",
+        "title": "Shawl",
+        "image": "/shawl.png",    
+    },
+    
+]
+
+const DryCleanItems = [
+    {
+        "id": 1,
+        "item": "Dry Clean",
+        "title": "Gloves",
+        "image": "/baby-gloves.png",    
+    },
+    {
+        "id": 2,
+        "item": "Dry Clean",
+        "title": "Clothes",
+        "image": "/clothes.png",    
+    },
+    {
+        "id": 3,
+        "item": "Dry Clean",
+        "title": "Socks",
+        "image": "/socks.png",    
+    },
+    {
+        "id": 4,
+        "item": "Dry Clean",
+        "title": "Dress",
+        "image": "/dress.png",    
+    },
+    {
+        "id": 5,
+        "item": "Dry Clean",
+        "title": "Hat",
+        "image": "/hat.png",    
+    },
+    {
+        "id": 6,
+        "item": "Dry Clean",
+        "title": "Shirt",
+        "image": "/hawaiian-shirt.png",    
+    },
+    {
+        "id": 7,
+        "item": "Dry Clean",
+        "title": "Pants",
+        "image": "/pants.png",    
+    },
+    {
+        "id": 8,
+        "item": "Dry Clean",
+        "title": "Shawl",
+        "image": "/shawl.png",    
+    },
+    
+]
+
+const IronItems = [
+    {
+        "id": 1,
+        "item": "Iron",
+        "title": "Gloves",
+        "image": "/baby-gloves.png",    
+    },
+    {
+        "id": 2,
+        "item": "Iron",
+        "title": "Clothes",
+        "image": "/clothes.png",    
+    },
+    {
+        "id": 3,
+        "item": "Iron",
+        "title": "Socks",
+        "image": "/socks.png",    
+    },
+    {
+        "id": 4,
+        "item": "Iron",
+        "title": "Dress",
+        "image": "/dress.png",    
+    },
+    {
+        "id": 5,
+        "item": "Iron",
+        "title": "Hat",
+        "image": "/hat.png",    
+    },
+    {
+        "id": 6,
+        "item": "Iron",
+        "title": "Shirt",
+        "image": "/hawaiian-shirt.png",    
+    },
+    {
+        "id": 7,
+        "item": "Iron",
+        "title": "Pants",
+        "image": "/pants.png",    
+    },
+    {
+        "id": 8,
+        "item": "Iron",
+        "title": "Shawl",
+        "image": "/shawl.png",    
+    },
+    
+]
+
+
+
+
 
 function Body() {
-    const buttons_Blue = images.map((image, index) => (
-        <Button key={index}
+    const buttons_Blue = LaundryItems.map((item) => (
+        <Button key={item.id}
             size={'Max'}
             variant={'blue'}>
             <img className="h-16"
-                src={image}
+                src={item.image}
                 alt={
-                    `Image ${index}`
+                    `Image ${item.id}`
                 }/>
         </Button>
     ));
-    const buttons_Red = images.map((image, index) => (
-        <Button key={index}
+    const buttons_Red = DryCleanItems.map((item) => (
+        <Button key={item.id}
             size={'Max'}
             variant={'red'}>
             <img className="h-16"
-                src={image}
+                src={item.image}
                 alt={
-                    `Image ${index}`
+                    `Image ${item.image}`
                 }/>
         </Button>
     ));
-    const buttons_Green = images.map((image, index) => (
-        <Button key={index}
+    const buttons_Green = IronItems.map((item) => (
+        <Button key={item.id}
             size={'Max'}
             variant={'green'}>
             <img className="h-16"
-                src={image}
+                src={item.image}
                 alt={
-                    `Image ${index}`
+                    `Image ${item.image}`
                 }/>
         </Button>
     ));
@@ -110,35 +243,7 @@ function Body() {
 
             </div>
             <div>
-                <Card className="  w-auto h-full bg-white flex flex-col justify-between">
-
-                    <CardHeader>
-                        <CardTitle>Cart</CardTitle>
-                        <CardDescription>Add items in your Cartd to checkout</CardDescription>
-                    </CardHeader>
-                    <ScrollArea className="h-full w-full rounded-md my-2">
-                        <CardContent className="h-5/6 space-y-2">
-                            <div className="border rounded-3xl w-full p-5 flex justify-between items-center gap-1 ">
-                                <div className="flex items-center gap-3">
-                                    <Avatar>
-                                        <AvatarImage src="/hat.png" alt="coat"/>
-                                    </Avatar>
-                                    <h1>hat</h1>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <Button size={'Min'}
-                                        className="rounded-full"><Minus size={16}/></Button>
-                                    <h1>3</h1>
-                                    <Button size={'Min'}
-                                        className="rounded-full"><Plus size={16}/></Button>
-                                </div>
-                            </div>
-                        </CardContent>
-                    </ScrollArea>
-                    <CardFooter className="justify-end">
-                        <Button className="bg-green-400 hover:bg-green-700 w-full">Submit</Button>
-                    </CardFooter>
-                </Card>
+                <Cart/>
             </div>
         </div>
     )
