@@ -3,6 +3,8 @@ import Header from "./components/Header"
 import {Login} from './views/Login'
 import {Register} from "./views/Register"
 import Body from "./components/Body"
+import ProtectedRoute from "./components/ProtectedRoute"
+import ProtectedRouteForLogin from "./components/ProtectedRouteForLogin"
 
 
 
@@ -14,9 +16,9 @@ function App() {
 
             <Header/>
             <Routes>
-            <Route path="/" element={<Body/>}/>
-            <Route path="/register" element={<Register/>}/>
-            <Route path="/login" element={<Login/>}/>
+            <Route path="/" element={<ProtectedRoute><Body/></ProtectedRoute>}/>
+            <Route path="/register" element={<ProtectedRouteForLogin><Register/></ProtectedRouteForLogin>}/>
+            <Route path="/login" element={<ProtectedRouteForLogin><Login/></ProtectedRouteForLogin>}/>
             </Routes>
 
 

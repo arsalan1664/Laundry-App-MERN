@@ -30,7 +30,7 @@ import {  CartItem, decrement, increment, remove } from '@/Redux/feature/cartSli
 
 function Cart() {
     const cart = useSelector((state : any) => state.cart.items);
-    // const user = useSelector((state) => state.user);
+    // 
     const dispatch = useDispatch();
 
     console.log(cart);
