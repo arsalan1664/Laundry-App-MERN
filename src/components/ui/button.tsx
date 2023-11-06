@@ -30,7 +30,7 @@ const buttonVariants = cva("inline-flex items-center justify-center whitespace-n
                 lg: "h-11 rounded-md px-8",
                 icon: "h-10 w-10",
                 Max: "h-40 w-40",
-                Min: "h-7 w-7"
+                Min: "h-5 w-5"
             }
         },
         defaultVariants: {
