@@ -63,8 +63,7 @@ export function Login() { // 1. Define your form.
     }
     const navigate = useNavigate()
 
-    function handleLogin(event: MouseEvent<HTMLButtonElement, MouseEvent>) {
-        event.preventDefault()
+    function handleLogin() {
         dispatch(login());
         navigate('/');
     }

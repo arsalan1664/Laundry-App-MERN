@@ -15,18 +15,13 @@ import {
 import {
     useNavigate
 } from "react-router-dom"
-import {
-    useEffect
-} from "react"
 
 function Header() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    function handleLogout(e) {
-        e.preventDefault();
+    function handleLogout() {
         dispatch(logout());
         navigate("/login");
-        
     }
 
     return (

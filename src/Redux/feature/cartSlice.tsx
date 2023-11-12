@@ -5,7 +5,7 @@ export interface CartItem {
   item: string;
   title: string;
   image: string;
-  count: number;
+  count: number ;
   color: string;
 }
 
@@ -31,16 +31,18 @@ export const cartSlice = createSlice({
 
 
     },
-    increment(state,action) {
+    increment(state, action: PayloadAction<CartItem>) {
       const selectItem = state.items.find(item => item.id === action.payload.id);
-      selectItem.count += 1
+      if (selectItem) {
+        selectItem.count += 1;
+      }
     },
-    decrement(state,action) {
+    
+    decrement(state, action: PayloadAction<CartItem>) {
       const selectItem = state.items.find(item => item.id === action.payload.id);
-      if(selectItem.count > 1 ){
-      selectItem.count -= 1}
-
-      
+      if (selectItem && selectItem.count > 1) {
+        selectItem.count -= 1;
+      }
     },
     remove: (state, action: PayloadAction<CartItem>) => {
       state.items = state.items.filter(item => item.id !== action.payload.id)
