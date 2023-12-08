@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom"
 import Header from "./components/Header"
-import {Login} from './views/Login'
 import {Register} from "./views/Register"
 import Body from "./components/Body"
+import { Login } from "./views/Login"
 
 
 

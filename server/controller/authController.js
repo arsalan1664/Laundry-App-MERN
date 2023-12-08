@@ -5,11 +5,11 @@ const jwt = require ("jsonwebtoken")
 
 async function Register(req, res) {
     try {
-        const { name, email, password, phone, address } = req.body
+        const { username, email, password, phone, address } = req.body
 
         // validation
-        if (!name) {
-            return res.status(400).send({ message: 'Name is Required' })
+        if (!username) {
+            return res.status(400).send({ message: 'Username is Required' })
         }
         if (!email) {
             return res.status(400).send({ message: 'Email is Required' })
@@ -45,7 +45,7 @@ async function Register(req, res) {
         // save
         const user = await prisma.user.create({
             data: {
-                name:name,
+                username:username,
                 email:email,
                 password: hashedPassword,
                 phone: phone,
@@ -113,7 +113,7 @@ async function Login(req, res) {
             success: true,
             message: "Login successful",
             user: {
-                name: user.name,
+                username: user.username,
                 email: user.email,
             },
             token,
